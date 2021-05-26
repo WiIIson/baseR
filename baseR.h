@@ -1,10 +1,9 @@
-#ifndef __baseR__
-#define __baseR__
+#ifndef __baseR_h__
+#define __baseR_h__
 
-// Just like R, r_to_cpp uses vectors instead of lists, but can also use
+// Just like R, baseR uses vectors instead of lists, but can also use
 // strings in stead of a char vector
 
-// This resource includes the following libraries:
 #include <vector>
 #include <iostream>
 
@@ -15,26 +14,12 @@
 // all
 // Returns true if all values are true
 // (takes boolean vector)
-bool all(std::vector<bool> vec) {
-    for (int i = 0; i < vec.size(); i++) {
-        if (vec[i] == false) {
-            return false;
-        }
-    }
-    return true; 
-}
+bool all(std::vector<bool> vec);
 
 // any
 // Returns true if any values are true
 // (takes boolean vector)
-bool any(std::vector<bool> vec) {
-    for (int i = 0; i < vec.size(); i++) {
-        if (vec[i] == true) {
-            return true;
-        }
-    }
-    return false;
-}
+bool any(std::vector<bool> vec);
 
 // cat, single value
 // Prints out the contents of the vector
@@ -96,24 +81,12 @@ T max(std::vector<T> vec) {
 // mean, single value
 // Returns the mean of the vector
 // (takes int vector)
-double mean(std::vector<int> vec) {
-    double ret_mean = 0;
-    for (int i = 0; i < vec.size(); i++) {
-        ret_mean += double(vec[i]);
-    }
-    return ret_mean/vec.size();
-}
+double mean(std::vector<int> vec);
 
 // mean, vector
 // Returns the mean of the vector
 // (takes double vector)
-double mean(std::vector<double> vec) {
-    double ret_mean = 0;
-    for (int i = 0; i < vec.size(); i++) {
-        ret_mean += vec[i];
-    }
-    return ret_mean/vec.size();
-}
+double mean(std::vector<double> vec);
 
 // min
 // Returns the minimum value in the vector
@@ -132,15 +105,7 @@ T min(std::vector<T> vec) {
 // which
 // Returns the indexes of true values
 // (takes boolean vector)
-std::vector<int> which(std::vector<bool> vec) {
-    std::vector<int> indices;
-    for (int i = 0; i < vec.size(); i++) {
-        if (vec[i] == true) {
-            indices.push_back(i);
-        }
-    }
-    return indices;
-}
+std::vector<int> which(std::vector<bool> vec);
 
 // which_max
 // Returns the index of the highest number

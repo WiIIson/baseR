@@ -1,5 +1,7 @@
 // This file is only for testing the functionality of the <baseR> library
 #include "baseR.h"
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
