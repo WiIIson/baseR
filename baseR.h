@@ -8,8 +8,25 @@
 #include <vector>
 #include <iostream>
 
+// All functions are ordered alphabetically
+
+////////////////////////////////////////////////////////////////////////////////
+
+// all
+// Returns true if all values are true
+// (takes boolean vector)
+bool all(std::vector<bool> vec) {
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] == false) {
+            return false;
+        }
+    }
+    return true; 
+}
+
 // any
-// Returns true if any values are true (takes boolean vector)
+// Returns true if any values are true
+// (takes boolean vector)
 bool any(std::vector<bool> vec) {
     for (int i = 0; i < vec.size(); i++) {
         if (vec[i] == true) {
@@ -20,14 +37,16 @@ bool any(std::vector<bool> vec) {
 }
 
 // cat, single value
-// Prints out the contents of the vector (takes template value)
+// Prints out the contents of the vector
+// (takes template value)
 template<typename T>
 void cat(T val) {
     std::cout << val << std::endl;
 }
 
 // cat, vector
-// Prints out the contents of the vector (takes template vector)
+// Prints out the contents of the vector
+// (takes any vector)
 template<typename T>
 void cat(std::vector<T> vec) {
     for (int i = 0; i < vec.size(); i++) {
@@ -37,7 +56,8 @@ void cat(std::vector<T> vec) {
 }
 
 // duplicated
-// Returns a bool vector for if an element is a duplicate (takes template vector)
+// Returns a bool vector for if an element is a duplicate 
+// (takes any vector)
 template<typename T>
 std::vector<bool> duplicated(std::vector<T> vec) {
     std::vector<T> elements;
@@ -60,7 +80,8 @@ std::vector<bool> duplicated(std::vector<T> vec) {
 }
 
 // max
-// Returns the maximum value in the vector (takes templat vector)
+// Returns the maximum value in the vector
+// (takes any vector)
 template<typename T>
 T max(std::vector<T> vec) {
     T temp = vec[0];
@@ -73,7 +94,8 @@ T max(std::vector<T> vec) {
 }
 
 // mean, single value
-// Returns the mean of the vector (takes int vector)
+// Returns the mean of the vector
+// (takes int vector)
 double mean(std::vector<int> vec) {
     double ret_mean = 0;
     for (int i = 0; i < vec.size(); i++) {
@@ -83,7 +105,8 @@ double mean(std::vector<int> vec) {
 }
 
 // mean, vector
-// Returns the mean of the vector (takes double vector)
+// Returns the mean of the vector
+// (takes double vector)
 double mean(std::vector<double> vec) {
     double ret_mean = 0;
     for (int i = 0; i < vec.size(); i++) {
@@ -93,7 +116,8 @@ double mean(std::vector<double> vec) {
 }
 
 // min
-// Returns the minimum value in the vector (takes templat vector)
+// Returns the minimum value in the vector
+// (takes any vector)
 template<typename T>
 T min(std::vector<T> vec) {
     T temp = vec[0];
@@ -106,7 +130,8 @@ T min(std::vector<T> vec) {
 }
 
 // which
-// Returns the indexes of true values (takes boolean vector)
+// Returns the indexes of true values
+// (takes boolean vector)
 std::vector<int> which(std::vector<bool> vec) {
     std::vector<int> indices;
     for (int i = 0; i < vec.size(); i++) {
@@ -118,7 +143,8 @@ std::vector<int> which(std::vector<bool> vec) {
 }
 
 // which_max
-// Returns the index of the highest number (takes boolean vector)
+// Returns the index of the highest number
+// (takes boolean vector)
 template<typename T>
 int which_max(std::vector<T> vec) {
     T temp = vec[0];
@@ -133,7 +159,8 @@ int which_max(std::vector<T> vec) {
 }
 
 // which_min
-// Returns the index of the lowest number (takes boolean vector)
+// Returns the index of the lowest number
+// (takes boolean vector)
 template<typename T>
 int which_min(std::vector<T> vec) {
     T temp = vec[0];
